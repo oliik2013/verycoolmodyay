@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "verycoolmodyay",
+	"version": "${version}",
+	"name": "verycoolmodyay",
+	"description": "much cool stuff included",
+	"authors": [
+		"oliik2013"
+	],
+	"contact": {
+		"homepage": "https://github.com/oliik2013",
+		"sources": "https://github.com/oliik2013"
+	},
+	"license": "MIT",
+	"icon": "assets/verycoolmodyay/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.oliik2013.verycoolmodyay.Verycoolmodyay"
+		],
+		"client": [
+			"com.oliik2013.verycoolmodyay.VerycoolmodyayClient"
+		],
+		"fabric-datagen": [
+			"com.oliik2013.verycoolmodyay.VerycoolmodyayDataGenerator"
+		]
+	},
+	"mixins": [
+		"verycoolmodyay.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
