@@ -1,5 +1,6 @@
 package com.oliik2013.verycoolmodyay;
 
+import com.oliik2013.verycoolmodyay.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -14,7 +15,7 @@ public class Verycoolmodyay implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
-
-		LOGGER.info("Hello Fabric world!");
+		ModItems.registerModItems();
+		LOGGER.info("verycoolmod loaded");
 	}
 }
