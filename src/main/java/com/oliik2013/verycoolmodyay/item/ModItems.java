@@ -1,7 +1,6 @@
 package com.oliik2013.verycoolmodyay.item;
 
 import com.oliik2013.verycoolmodyay.Verycoolmodyay;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -11,10 +10,8 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
-
 public class ModItems {
-    public static final Item FRIEDEGG = registerItem("friedegg", new Item(new FabricItemSettings().food(ModFoodComponents.FRIEDEGG)));
-
+    public static final Item FRIEDEGG = registerItem("friedegg", new Item(new Item.Settings().food(ModFoodComponents.FRIEDEGG)));
     private static void addItemsToFoodTabItemGroup(FabricItemGroupEntries entries) {
         entries.add(FRIEDEGG);
     }

@@ -17,8 +17,8 @@ jobs:
       - name: setup jdk
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
-          distribution: 'oracle'
+          java-version: '21'
+          distribution: 'zulu'
       - name: build
         run: powershell ./gradlew build
       - name: capture build artifacts
