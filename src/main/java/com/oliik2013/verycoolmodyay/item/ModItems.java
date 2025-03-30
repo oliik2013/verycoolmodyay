@@ -19,7 +19,7 @@ public class ModItems {
 
 
     private static Item registerItem(String name, Item item) {
-        return Registry.register(Registries.ITEM, new Identifier(Verycoolmodyay.MOD_ID, name), item);
+        return Registry.register(Registries.ITEM, Identifier.of(Verycoolmodyay.MOD_ID, name), item);
     }
     public static void registerModItems() {
         Verycoolmodyay.LOGGER.info("loading/registering items for " + Verycoolmodyay.MOD_ID);
