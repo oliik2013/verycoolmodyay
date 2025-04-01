@@ -2,28 +2,25 @@ package com.oliik2013.verycoolmodyay.item;
 
 import com.oliik2013.verycoolmodyay.Verycoolmodyay;
 
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
-import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
+import java.util.Objects;
+
 public class ModItems {
-    public static final Item FRIEDEGG = registerItem("friedegg", new Item(new Item.Settings().food(ModFoodComponents.FRIEDEGG)));
-    private static void addItemsToFoodTabItemGroup(FabricItemGroupEntries entries) {
-        entries.add(FRIEDEGG);
-    }
 
+    public static final Identifier FRIEDEGG_ID = Identifier.of("verycoolmodyay", "friedegg");
 
-
-    private static Item registerItem(String name, Item item) {
-        return Registry.register(Registries.ITEM, Identifier.of(Verycoolmodyay.MOD_ID, name), item);
-    }
     public static void registerModItems() {
-        Verycoolmodyay.LOGGER.info("loading/registering items for " + Verycoolmodyay.MOD_ID);
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(ModItems::addItemsToFoodTabItemGroup);
+        Item FRIEDEGG = Registry.register(Registries.ITEM, Identifier.of("verycoolmodyay", "friedegg"), new Item(new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of("verycoolmodyay", "friedegg"))).food(Objects.requireNonNull(ModFoodComponents.FRIEDEGG, "ModFoodComponents.FRIEDEGG is null!"))));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> entries.add(FRIEDEGG));
+        Verycoolmodyay.LOGGER.info("Registered item: " + FRIEDEGG_ID);
     }
+
 }
